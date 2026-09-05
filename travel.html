@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TravelGo - Explore The World | Real-Time Travel Booking &amp; Deals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="https://travelgo-puce.vercel.app/favicon.svg" />
+    <link rel="stylesheet" href="travel.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <a href="#" class="brand" aria-label="TravelGo logo">
+            <span class="brand-mark">T</span>
+            <span>TravelGo</span>
+          </a>
+        </div>
+
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+          <a href="#" class="nav-link active">Home</a>
+          <a href="#destinations" class="nav-link">Destinations</a>
+          <a href="#hotels" class="nav-link">Hotels</a>
+          <a href="#packages" class="nav-link">Packages</a>
+          <a href="#about" class="nav-link">About Us</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <div class="mobile-menu-footer">
+            <label class="mobile-currency">
+              <span class="currency-symbol" aria-hidden="true">◎</span>
+              <span>Currency:</span>
+              <select aria-label="Currency">
+                <option>INR</option>
+                <option>USD</option>
+                <option>EUR</option>
+              </select>
+            </label>
+            <button class="sign-out-btn" type="button">Sign Out</button>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <button class="currency-btn" type="button" style="display: flex; align-items: center; gap: 4px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="lab(35.6337% -1.58697 -10.8425)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe w-3.5 h-3.5 text-gray-500" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            INR
+          </button>
+          <a href="#" class="bookings-pill" aria-label="Bookings">
+            <span class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="lab(35.6337% -1.58697 -10.8425)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-luggage w-5 h-5" aria-hidden="true"><path d="M6 20a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2"></path><path d="M8 18V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14"></path><path d="M10 20h4"></path><circle cx="16" cy="20" r="2"></circle><circle cx="8" cy="20" r="2"></circle></svg>
+            </span>
+            <span style="font-weight: 700; background: var(--primary); color: var(--card); padding: 4px 8px; border-radius: 50%; position: absolute; top: -8px; right: -8px; display: flex; align-items: center; justify-content: center;">1</span>
+          </a>
+          <button class="profile-btn" type="button">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Alex Morgan" />
+            <span>Alex Morgan</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section">
+          <div class="hero-copy">
+            <span class="eyebrow">Real-Time Travel Deals &amp; Live Weather</span>
+            <h1>EXPLORE <span>THE WORLD</span></h1>
+            <p>Find your perfect destination</p>
+            <a href="#destinations" class="cta-link">Explore Now</a>
+          </div>
+
+          <form class="travel-search" aria-label="Travel search form">
+            <div class="field-group">
+              <label>
+                <span class="field-icon">📍</span>
+                <span>Where to?</span>
+              </label>
+              <input type="text" name="destination" value="" placeholder="Enter destination" />
+            </div>
+
+            <div class="field-group">
+              <label>
+                <span class="field-icon">📅</span>
+                <span>Check In</span>
+              </label>
+              <input type="date" name="checkin" />
+            </div>
+
+            <div class="field-group">
+              <label>
+                <span class="field-icon">📅</span>
+                <span>Check Out</span>
+              </label>
+              <input type="date" name="checkout" />
+            </div>
+
+            <div class="field-group guests-field">
+              <div class="guest-select">
+                <div class="field-icon">👥</div>
+                <div>
+                  <span>Guests</span>
+                  <strong>2 Guests</strong>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="search-btn">
+              <span class="field-icon">🔎</span>
+              <span>Search</span>
+            </button>
+          </form>
+        </section>
+
+        <section id="destinations" class="content-section destinations-section">
+          <div class="section-heading">
+            <h2>POPULAR DESTINATIONS</h2>
+            <p>Explore world-renowned travel hotspots with real-time weather and verified visitor ratings.</p>
+          </div>
+
+          <div class="destination-grid">
+            <article class="destination-card">
+              <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80" alt="Paris, France" />
+              <div class="card-overlay">
+                <div class="temp-tag">🌡️ 22°C</div>
+                <button type="button" aria-label="Save to favorites">♡</button>
+              </div>
+              <div class="destination-info">
+                <div class="title-wrap">
+                  <h3>Paris</h3>
+                  <p>France</p>
+                </div>
+                <div class="price-row">
+                  <span>From ₹18,000</span>
+                  <a href="#">Explore</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="destination-card">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80" alt="Dubai, UAE" />
+              <div class="card-overlay">
+                <div class="temp-tag">🌡️ 33°C</div>
+                <button type="button" aria-label="Save to favorites">♡</button>
+              </div>
+              <div class="destination-info">
+                <div class="title-wrap">
+                  <h3>Dubai</h3>
+                  <p>UAE</p>
+                </div>
+                <div class="price-row">
+                  <span>From ₹14,500</span>
+                  <a href="#">Explore</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="destination-card">
+              <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80" alt="Switzerland, Switzerland" />
+              <div class="card-overlay">
+                <div class="temp-tag">🌡️ 16°C</div>
+                <button type="button" aria-label="Save to favorites">♡</button>
+              </div>
+              <div class="destination-info">
+                <div class="title-wrap">
+                  <h3>Switzerland</h3>
+                  <p>Switzerland</p>
+                </div>
+                <div class="price-row">
+                  <span>From ₹22,000</span>
+                  <a href="#">Explore</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="destination-card">
+              <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=900&q=80" alt="Greece, Greece" />
+              <div class="card-overlay">
+                <div class="temp-tag">🌡️ 27°C</div>
+                <button type="button" aria-label="Save to favorites">♡</button>
+              </div>
+              <div class="destination-info">
+                <div class="title-wrap">
+                  <h3>Greece</h3>
+                  <p>Greece</p>
+                </div>
+                <div class="price-row">
+                  <span>From ₹16,000</span>
+                  <a href="#">Explore</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="destination-card">
+              <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=80" alt="Bali, Indonesia" />
+              <div class="card-overlay">
+                <div class="temp-tag">🌡️ 29°C</div>
+                <button type="button" aria-label="Save to favorites">♡</button>
+              </div>
+              <div class="destination-info">
+                <div class="title-wrap">
+                  <h3>Bali</h3>
+                  <p>Indonesia</p>
+                </div>
+                <div class="price-row">
+                  <span>From ₹11,000</span>
+                  <a href="#">Explore</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <a href="#" class="section-link">View All 20+ Global Destinations</a>
+        </section>
+
+        <section id="hotels" class="content-section hotels-section">
+          <div class="section-heading">
+            <h2>TOP HOTELS</h2>
+            <p>Handpicked 5-star accommodations with instant confirmation and best price guarantee.</p>
+          </div>
+
+          <div class="hotel-grid">
+            <article class="hotel-card">
+              <div class="hotel-image-wrap">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Ocean Paradise" />
+                <span class="hotel-badge left">Only 3 rooms left</span>
+                <span class="hotel-badge right">Best Seller</span>
+              </div>
+
+              <div class="hotel-content">
+                <div class="hotel-topline">
+                  <div class="stars">★★★★★</div>
+                  <span class="rating">5.0</span>
+                </div>
+                <h3>Ocean Paradise</h3>
+                <div class="location-line">📍 Maldives</div>
+                <div class="hotel-price-row">
+                  <span class="price">₹12,000</span>
+                  <span class="period">/ night</span>
+                </div>
+              </div>
+
+              <button type="button" class="book-btn">Book Now</button>
+            </article>
+
+            <article class="hotel-card">
+              <div class="hotel-image-wrap">
+                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80" alt="Luxury Stay Inn" />
+                <span class="hotel-badge left">Only 5 rooms left</span>
+                <span class="hotel-badge right">Special Offer</span>
+              </div>
+
+              <div class="hotel-content">
+                <div class="hotel-topline">
+                  <div class="stars">★★★★★</div>
+                  <span class="rating">5.0</span>
+                </div>
+                <h3>Luxury Stay Inn</h3>
+                <div class="location-line">📍 Dubai</div>
+                <div class="hotel-price-row">
+                  <span class="price">₹8,500</span>
+                  <span class="period">/ night</span>
+                </div>
+              </div>
+
+              <button type="button" class="book-btn">Book Now</button>
+            </article>
+
+            <article class="hotel-card">
+              <div class="hotel-image-wrap">
+                <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Alpine Resort" />
+                <span class="hotel-badge left">Only 2 rooms left</span>
+                <span class="hotel-badge right">Popular Pick</span>
+              </div>
+
+              <div class="hotel-content">
+                <div class="hotel-topline">
+                  <div class="stars">★★★★★</div>
+                  <span class="rating">5.0</span>
+                </div>
+                <h3>Alpine Resort</h3>
+                <div class="location-line">📍 Switzerland</div>
+                <div class="hotel-price-row">
+                  <span class="price">₹15,000</span>
+                  <span class="period">/ night</span>
+                </div>
+              </div>
+
+              <button type="button" class="book-btn">Book Now</button>
+            </article>
+
+            <article class="hotel-card">
+              <div class="hotel-image-wrap">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Island Retreat" />
+                <span class="hotel-badge left">Only 4 rooms left</span>
+                <span class="hotel-badge right">Eco Luxury</span>
+              </div>
+
+              <div class="hotel-content">
+                <div class="hotel-topline">
+                  <div class="stars">★★★★★</div>
+                  <span class="rating">5.0</span>
+                </div>
+                <h3>Island Retreat</h3>
+                <div class="location-line">📍 Bali</div>
+                <div class="hotel-price-row">
+                  <span class="price">₹9,000</span>
+                  <span class="period">/ night</span>
+                </div>
+              </div>
+
+              <button type="button" class="book-btn">Book Now</button>
+            </article>
+          </div>
+
+          <a href="#" class="section-link">Explore All Luxury Hotels &amp; Resorts</a>
+        </section>
+
+        <section id="gallery" class="content-section gallery-section">
+          <div class="section-heading">
+            <h2>PHOTO GALLERY</h2>
+            <p>Glimpses of pristine paradises and iconic architectural wonders from our global travelers.</p>
+          </div>
+
+          <div class="gallery-grid">
+            <article class="gallery-card tall">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Tropical Shorelines & Palms" />
+              <div class="gallery-info">
+                <span class="gallery-tag">📍</span>
+                <div>
+                  <p>Tropical Shorelines &amp; Palms</p>
+                  <small>Maldives</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1200&q=80" alt="Overwater Villas Boardwalk" />
+              <div class="gallery-info">
+                <span class="gallery-tag">📍</span>
+                <div>
+                  <p>Overwater Villas Boardwalk</p>
+                  <small>Bora Bora / Maldives</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80" alt="Limestone Bays & Longtail Boats" />
+              <div class="gallery-info">
+                <span class="gallery-tag">📍</span>
+                <div>
+                  <p>Limestone Bays &amp; Longtail Boats</p>
+                  <small>Krabi / Phi Phi, Thailand</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=80" alt="Santorini Sunset Vista" />
+              <div class="gallery-info">
+                <span class="gallery-tag">📍</span>
+                <div>
+                  <p>Santorini Sunset Vista</p>
+                  <small>Oia, Greece</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70b5?auto=format&fit=crop&w=1200&q=80" alt="Emerald Waters & Sea Caves" />
+              <div class="gallery-info">
+                <span class="gallery-tag">📍</span>
+                <div>
+                  <p>Emerald Waters &amp; Sea Caves</p>
+                  <small>Maya Bay, Thailand</small>
+                </div>
+              </div>
+            </article>
+
+            <article class="gallery-card">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80" alt="Dubai Skyline & Burj Khalifa" />
+              <div class="gallery-info">
+                <span class="gallery-tag">📍</span>
+                <div>
+                  <p>Dubai Skyline &amp; Burj Khalifa</p>
+                  <small>Dubai, UAE</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section features-section">
+          <div class="section-heading">
+            <h2>WHY CHOOSE US?</h2>
+            <p>Travel with complete peace of mind, transparent pricing, and round-the-clock personal assistance.</p>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">🛡️</div>
+              <div>
+                <h3>Safe &amp; Secure</h3>
+                <p>Your safety is our priority</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">💰</div>
+              <div>
+                <h3>Best Price Guarantee</h3>
+                <p>We ensure best price for you</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">📞</div>
+              <div>
+                <h3>24/7 Support</h3>
+                <p>We are here to help you anytime</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">✅</div>
+              <div>
+                <h3>Easy Booking</h3>
+                <p>Book your trip in easy steps</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact" class="site-footer">
+        <div class="footer-top">
+          <div class="footer-brand-block">
+            <a href="#" class="brand footer-brand">
+              <span class="brand-mark">T</span>
+              <span>TravelGo</span>
+            </a>
+            <p>Explore the beautiful world with us. Discover handpicked luxury hotels, breathtaking destinations, and personalized itineraries at guaranteed best rates.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">f</a>
+              <a href="#" aria-label="Instagram">◎</a>
+              <a href="#" aria-label="Twitter">x</a>
+              <a href="#" aria-label="YouTube">▶</a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h4>QUICK LINKS</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Destinations</a></li>
+              <li><a href="#">Hotels</a></li>
+              <li><a href="#">Packages</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h4>POPULAR DESTINATIONS</h4>
+            <ul>
+              <li><a href="#">Paris</a></li>
+              <li><a href="#">Dubai</a></li>
+              <li><a href="#">Switzerland</a></li>
+              <li><a href="#">Greece</a></li>
+              <li><a href="#">Bali</a></li>
+            </ul>
+          </div>
+
+          <div class="newsletter-block">
+            <h4>NEWSLETTER</h4>
+            <p>Subscribe to get our latest travel offers and updates.</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Enter your email" />
+              <button type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 TravelGo. All Rights Reserved.</p>
+          <p style="font-size: 0.9rem; color: var(--muted); text-align: center; text-transform: capitalize;">Designed by mohd Barkat</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <script>
+      const topbar = document.querySelector(".topbar");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const mainNav = document.querySelector(".main-nav");
+
+      function closeMenu() {
+        topbar.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+      }
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = topbar.classList.toggle("menu-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+
+        if (isOpen) mainNav.querySelector("a").focus();
+      });
+
+      mainNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+
+      document.addEventListener("click", (event) => {
+        if (!topbar.contains(event.target)) closeMenu();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 767) closeMenu();
+      });
+    </script>
+
+  </body>
+</html>
